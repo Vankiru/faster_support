@@ -4,9 +4,10 @@ require './number_to_currency'
 
 def test_memory_usage
   currency_iso = 'USD'.freeze
-  amount = 97_465_732.57389
+  amount = 97_465_732.5
   #amount = -54_537_776_871.47523
-  #amount = 37_776_871.47523
+  #amount = -4_537_776_871.47523
+  #amount = BigDecimal('3248679385673845673848247562954863549673856738578637245784349768356034956839586935453777612345678912345678900.23348675698359678')
 
   decimal = BigDecimal(amount.to_s)
   float = amount.to_f
