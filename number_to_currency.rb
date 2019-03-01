@@ -27,11 +27,20 @@ def float_to_string(amount)
   add_trailing_zero(String(amount.round(2)))
 end
 
-def rational_to_string(amount)
-  string = String(amount.to_i)
+#def rational_to_string(amount)
+  #string = String(amount.to_i)
 
-  string.insert(-1, '.'.freeze)
-  string.insert(-1, rational_fraction(amount))
+  #string.insert(-1, '.'.freeze)
+  #string.insert(-1, rational_fraction(amount))
+
+  #string
+#end
+
+def rational_to_string(amount)
+  number = amount.numerator / amount.denominator * 100 + rational_fraction(amount)
+  string = String(number)
+
+  string.insert(-3, '.'.freeze)
 
   string
 end
@@ -43,7 +52,6 @@ end
 # uses less memory.
 def rational_fraction(amount)
   fraction = 0
-
   remainder = amount.numerator % amount.denominator
 
   3.times do
@@ -61,7 +69,7 @@ def rational_fraction(amount)
     fraction /= 10
   end
 
-  String(fraction)
+  fraction
 end
 
 def decimal_to_string(amount)

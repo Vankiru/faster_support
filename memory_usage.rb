@@ -4,7 +4,8 @@ require './number_to_currency'
 
 def test_memory_usage
   currency_iso = 'USD'.freeze
-  amount = 97_465_732.5
+  amount = 97_465_732.5783
+  #amount = 0
   #amount = -54_537_776_871.47523
   #amount = -4_537_776_871.47523
   #amount = BigDecimal('3248679385673845673848247562954863549673856738578637245784349768356034956839586935453777612345678912345678900.23348675698359678')
@@ -42,3 +43,5 @@ def test_memory_usage
   puts "integer:  #{integer_profiler.total_allocated_memsize} | #{integer_profiler.total_retained_memsize}"
   puts "negative: #{negative_profiler.total_allocated_memsize} | #{negative_profiler.total_retained_memsize}"
 end
+
+test_memory_usage
