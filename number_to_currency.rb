@@ -22,6 +22,7 @@ end
 # It works incorrect with float numbers
 # that have at least more than 15 digits 
 # of its integer part.
+# Float#round can return incorrect value.
 def float_to_string(amount)
   add_trailing_zero(String(amount.round(2)))
 end
